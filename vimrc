@@ -42,7 +42,7 @@ nmap <D-6> g^
 nmap <D-0> g^
 
 "add some line space for easy reading
-set linespace=2
+set linespace=4
 
 "disable visual bell
 set visualbell t_vb=
@@ -170,10 +170,10 @@ function! s:Median(nums)
     endif
 endfunction
 
-"indent settings
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+"indent settings default global
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 set autoindent
 
@@ -247,7 +247,7 @@ else
     "set railscasts colorscheme when running vim in gnome terminal
     if $COLORTERM == 'gnome-terminal'
         set term=gnome-256color
-        colorscheme solarized
+        colorscheme railscasts
     else
         if $TERM == 'xterm'
             set term=xterm-256color
@@ -279,9 +279,6 @@ nnoremap Y y$
 
 "mark syntax errors with :signs
 let g:syntastic_enable_signs=1
-
-"key mapping for Gundo
-nnoremap <F4> :GundoToggle<CR>
 
 "snipmate setup
 try
