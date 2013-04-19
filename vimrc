@@ -58,15 +58,6 @@ set statusline=%f       "tail of the filename
 "Git
 set statusline+=%{fugitive#statusline()}
 
-"RVM
-set statusline+=%{exists('g:loaded_rvm')?rvm#statusline():''}
-
-set statusline+=%=      "left/right separator
-set statusline+=%c,     "cursor column
-set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ %P    "percent through file
-set laststatus=2
-
 "turn off needless toolbar on gvim/mvim
 set guioptions-=T
 "turn off the scroll bar
@@ -88,7 +79,6 @@ function! StatuslineTrailingSpaceWarning()
     endif
     return b:statusline_trailing_space_warning
 endfunction
-
 
 "return the syntax highlight group under the cursor ''
 function! StatuslineCurrentHighlight()
@@ -257,7 +247,7 @@ else
     "set railscasts colorscheme when running vim in gnome terminal
     if $COLORTERM == 'gnome-terminal'
         set term=gnome-256color
-        colorscheme molokai
+        colorscheme solarized
     else
         if $TERM == 'xterm'
             set term=xterm-256color
