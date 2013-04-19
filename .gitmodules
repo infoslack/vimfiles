@@ -33,3 +33,6 @@
 [submodule "bundle/html5.vim"]
 	path = bundle/html5.vim
 	url = https://github.com/othree/html5.vim.git
+[submodule "bundle/vim-capybara"]
+	path = bundle/vim-capybara
+	url = https://github.com/asux/vim-capybara.git
