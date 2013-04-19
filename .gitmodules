@@ -1,58 +1,58 @@
 [submodule "snippets"]
-  path = snippets
-  url = git://github.com/asux/snipmate-snippets.git
-  ignore = dirty
+        path = snippets
+        url = git://github.com/asux/snipmate-snippets.git
+        ignore = dirty
 [submodule "bundle/ack"]
-  path = bundle/ack
-  url = git://github.com/mileszs/ack.vim.git
-  ignore = dirty
+        path = bundle/ack
+        url = git://github.com/mileszs/ack.vim.git
+        ignore = dirty
 [submodule "bundle/fugitive"]
-  path = bundle/fugitive
-  url = git://github.com/tpope/vim-fugitive.git
-  ignore = dirty
+        path = bundle/fugitive
+        url = git://github.com/tpope/vim-fugitive.git
+        ignore = dirty
 [submodule "bundle/markdown"]
-  path = bundle/markdown
-  url = github://github.com/tpope/vim-markdown.git
-  ignore = dirty
+        path = bundle/markdown
+        url = github://github.com/tpope/vim-markdown.git
+        ignore = dirty
 [submodule "bundle/snipmate"]
-  path = bundle/snipmate
-  url = git://github.com/akitaonrails/snipmate.vim.git
-  ignore = dirty
+        path = bundle/snipmate
+        url = git://github.com/akitaonrails/snipmate.vim.git
+        ignore = dirty
 [submodule "bundle/rails"]
-  path = bundle/rails
-  url = githubit://github.com/tpope/vim-rails.git
-  ignore = dirty
+        path = bundle/rails
+        url = githubit://github.com/tpope/vim-rails.git
+        ignore = dirty
 [submodule "bundle/supertab"]
-  path = bundle/supertab
-  url = githubit://github.com/ervandew/supertab.git
-  ignore = dirty
+        path = bundle/supertab
+        url = githubit://github.com/ervandew/supertab.git
+        ignore = dirty
 [submodule "bundle/syntastic"]
-  path = bundle/syntastic
-  url = git://githubhub.com/scrooloose/syntastic.git
-  ignore = dirty
+        path = bundle/syntastic
+        url = git://githubhub.com/scrooloose/syntastic.git
+        ignore = dirty
 [submodule "bundle/vim-ruby"]
-  path = bundle/vim-ruby
-  url = git://github.com/vim-ruby/vim-ruby.git
-  ignore = dirty
+        path = bundle/vim-ruby
+        url = git://github.com/vim-ruby/vim-ruby.git
+        ignore = dirty
 [submodule "bundle/vim-ruby-sinatra"]
-  path = bundle/vim-ruby-sinatrasinatra
-  url = git://github.com/hallison/vim-ruby-sinatra.git
-  ignore  = dirty
+        path = bundle/vim-ruby-sinatrasinatra
+        url = git://github.com/hallison/vim-ruby-sinatra.git
+        ignore  = dirty
 [submodule "bundle/html5.vim"]
-  path = bundle/html5.vim
-  url = git://github.com/othree/html5.vim.git
+        path = bundle/html5.vim
+        url = git://github.com/othree/html5.vim.git
 [submodule "bundle/vim-capybara"]
-  path = bundle/vim-capybara
-  url = git://github.com/asux/vim-capybara.git
+        path = bundle/vim-capybara
+        url = git://github.com/asux/vim-capybara.git
 [submodule "bundle/vim-colors-solarized"]
-  path = bundle/vim-colors-solarizedim-colors-solarized
-  url = git://github.com/altercation/vim-colors-solarizedim-colors-solarizedrized.git
+        path = bundle/vim-colors-solarizedim-colors-solarized
+        url = git://github.com/altercation/vim-colors-solarizedim-colors-solarizedrized.git
 [submodule "bundle/vim-jquery"]
-  path = bundle/vim-jquery
-  url = git://github.com/itspriddle/vim-jquery.git
+        path = bundle/vim-jquery
+        url = git://github.com/itspriddle/vim-jquery.git
 [submodule "bundle/zencoding-vim"]
-  path = bundle/zencoding-vim
-  url =     git://github.com/mattn/zencoding-vim.git
+        path = bundle/zencoding-vim
+        url =     git://github.com/mattn/zencoding-vim.git
 [submodule "bundle/webapi-vim"]
-  path = bundle/webapi-vim
-  url = git://github.com/mattn/webapi-vim.git
+        path = bundle/webapi-vim
+        url = git://github.com/mattn/webapi-vim.git
