@@ -50,6 +50,9 @@
 [submodule "bundle/vim-jquery"]
   path = bundle/vim-jquery
   url = git://github.com/itspriddle/vim-jquery.git
+[submodule "bundle/zencoding-vim"]
+  path = bundle/zencoding-vim
+  url =     git://github.com/mattn/zencoding-vim.git
 [submodule "bundle/webapi-vim"]
   path = bundle/webapi-vim
   url = git://github.com/mattn/webapi-vim.git
