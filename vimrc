@@ -280,6 +280,11 @@ noremap Q gq
 "make Y consistent with C and D
 nnoremap Y y$
 
+"bindings for ragtag
+inoremap <M-o>    <Esc>o
+inoremap <C-j>    <Down>
+let g:ragtag_global_maps = 1
+
 "mark syntax errors with :signs
 let g:syntastic_enable_signs=1
 
