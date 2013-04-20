@@ -1,3 +1,6 @@
+"Set utf-8 as default encoding
+set encoding=utf8
+
 "avoiding annoying CSApprox warning message
 let g:CSApprox_verbose_level = 0
 
