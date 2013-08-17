@@ -1,5 +1,5 @@
 #Vim
-My clean configuration for Vim
+My clean configuration for Vim [![endorse](https://api.coderwall.com/infoslack/endorsecount.png)](https://coderwall.com/infoslack)
 
 ###Plugins
 
