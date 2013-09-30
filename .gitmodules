@@ -53,3 +53,6 @@
 [submodule "bundle/vim-powerline"]
 	path = bundle/vim-powerline
 	url = https://github.com/skwp/vim-powerline.git
+[submodule "snippets"]
+	path = snippets
+	url = https://github.com/infoslack/snipmate-snippets
