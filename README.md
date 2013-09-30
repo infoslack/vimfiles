@@ -21,10 +21,11 @@ My clean configuration for Vim [![endorse](https://api.coderwall.com/infoslack/e
 
 Clone this repo into your home directory either as .vim
 
-        git clone git@github.com:infoslack/vimfiles.git ~/.vim
+        git clone https://github.com/infoslack/vimfiles.git ~/.vim
 
 Then 'cd' into the repo and run this to get the snippets submodule:
 
+        cd ~/.vim
         git submodule update --init
 
 Now you should create a new .vimrc file in your home directory that loads
