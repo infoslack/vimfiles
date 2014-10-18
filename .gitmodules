@@ -65,3 +65,6 @@
 [submodule "bundle/vim-tubaina"]
 	path = bundle/vim-tubaina
 	url = https://github.com/vinibaggio/vim-tubaina.git
+[submodule "bundle/vim-slim"]
+	path = bundle/vim-slim
+	url = https://github.com/slim-template/vim-slim.git
