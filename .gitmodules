@@ -62,3 +62,6 @@
 [submodule "bundle/vim-endwise"]
 	path = bundle/vim-endwise
 	url = https://github.com/tpope/vim-endwise.git
+[submodule "bundle/vim-tubaina"]
+	path = bundle/vim-tubaina
+	url = https://github.com/vinibaggio/vim-tubaina.git
