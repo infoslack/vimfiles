@@ -68,3 +68,6 @@
 [submodule "bundle/vim-slim"]
 	path = bundle/vim-slim
 	url = https://github.com/slim-template/vim-slim.git
+[submodule "bundle/dockerfile-vim"]
+	path = bundle/dockerfile-vim
+	url = https://github.com/ekalinin/Dockerfile.vim.git
