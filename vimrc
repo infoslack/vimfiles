@@ -65,6 +65,20 @@ set scrolloff=8
 set sidescrolloff=15
 set sidescroll=1
 
+"set terminal color scheme
+let g:CSApprox_loaded = 1
+if $COLORTERM == 'gnome-terminal'
+  set term=gnome-256color
+  set background=dark
+  colorscheme molokai
+else
+  if $TERM == 'xterm'
+    set  term=xterm-256color
+    set background=dark
+    colorscheme solarized
+  endif
+endif
+
 "map to bufexplorer
 nnoremap <leader>b :BufExplorer<cr>
 
@@ -107,3 +121,17 @@ function! s:SetupSnippets()
     call ExtractSnips("~/vimfiles/snippets/html", "php")
   endtry
 endfunction
+
+"create tabs
+nmap <leader>t :tabnew<CR>
+
+"column limit 80 chars
+if exists('+colorcolumn')
+  set colorcolumn=80
+endif
+
+"disable arrow keys
+noremap <Up>    :echo "NOP!"<cr>
+noremap <Down>  :echo "NOP!"<cr>
+noremap <Left>  :echo "NOP!"<cr>
+noremap <Right> :echo "NOP!"<cr>
