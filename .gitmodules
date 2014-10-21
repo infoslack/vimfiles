@@ -71,3 +71,6 @@
 [submodule "bundle/dockerfile-vim"]
 	path = bundle/dockerfile-vim
 	url = https://github.com/ekalinin/Dockerfile.vim.git
+[submodule "bundle/vim-jinja2"]
+	path = bundle/vim-jinja2
+	url = https://github.com/Glench/Vim-Jinja2-Syntax.git
