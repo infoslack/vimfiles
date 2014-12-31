@@ -35,9 +35,6 @@
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "bundle/vim-golang"]
-	path = bundle/vim-golang
-	url = https://github.com/jnwhiteh/vim-golang.git
 [submodule "bundle/vim-jquery"]
 	path = bundle/vim-jquery
 	url = https://github.com/itspriddle/vim-jquery.git
@@ -74,3 +71,6 @@
 [submodule "bundle/vim-jinja2"]
 	path = bundle/vim-jinja2
 	url = https://github.com/Glench/Vim-Jinja2-Syntax.git
+[submodule "bundle/vim-go"]
+	path = bundle/vim-go
+	url = https://github.com/fatih/vim-go.git
