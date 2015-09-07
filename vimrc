@@ -1,18 +1,38 @@
-"Set utf-8 as default encoding
-set encoding=utf8
-
-"necessary on some Linux distros for pathogen to properly load bundles
-filetype on
+"Initialize
+set nocompatible
 filetype off
 
-"load pathogen managed plugins
-call pathogen#infect()
+"Vundle init
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
 
-"Use Vim settings, rather then Vi settings (much better!).
-"This must be first, because it changes other options as a side effect.
-set nocompatible
+"Plugins
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'infoslack/snipmate-snippets'
+Bundle 'ntpeters/vim-better-whitespace'
+Bundle 'jlanzarotta/bufexplorer'
+Bundle 'ervandew/snipmate.vim'
+Bundle 'ervandew/supertab'
+Bundle 'bling/vim-airline'
+Bundle 'rking/ag.vim'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-ragtag'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-endwise'
+Bundle 'scrooloose/syntastic'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/emmet-vim'
+Bundle 'vinibaggio/vim-tubaina'
+Bundle 'ekalinin/Dockerfile.vim'
+Bundle 'Glench/Vim-Jinja2-Syntax'
+Bundle 'fatih/vim-go'
 
 "General
+set encoding=utf-8
 set number                      "add line numbers
 set backspace=indent,eol,start  "allow backspace in insert mode
 set history=1000                "store lots of :cmdline history
@@ -20,30 +40,38 @@ set showcmd                     "show incomplete cmds down the bottom
 set showmode                    "show current mode down the bottom
 set visualbell                  "no sounds
 set autoread                    "reload files changed outside vim
+set copyindent
+set laststatus=2
+set statusline=%f
+
+"Indentation
+set autoindent
+set smartindent
+set tabstop=2
+set shiftwidth=2
+set expandtab
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
 set hidden
 
-"Turn on syntax highlighting
+"Syntax
 syntax on
+autocmd FileType ruby     set et sw=2 ts=2 sts=2
+autocmd FileType Gemfile  set ft=ruby
+autocmd FileType yaml     set et sw=2 ts=2 sts=2
+autocmd FileType css      set et sw=2 ts=2 sts=2
+autocmd FileType python   set et sw=4 ts=4 sts=4
+autocmd FileType Makefile set et sw=4 ts=4 sts=4
+autocmd FileType go       set et sw=4 ts=4 sts=4
+autocmd FileType c        set et sw=4 ts=4 sts=4
+autocmd FileType markdown set et sw=4 ts=4 sts=4
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 "Turn Off Swap Files
 set noswapfile
 set nobackup
 set nowb
-
-"Indentation
-set autoindent
-set smartindent
-set smarttab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
-set expandtab
-
-filetype plugin on
-filetype indent on
 
 "Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
@@ -65,15 +93,14 @@ set scrolloff=8
 set sidescrolloff=15
 set sidescroll=1
 
-"set terminal color scheme
-let g:CSApprox_loaded = 1
+"Color scheme
 if $COLORTERM == 'gnome-terminal'
   set term=gnome-256color
-  set background=dark
+  set background=light
   colorscheme molokai
 else
   if $TERM == 'xterm'
-    set  term=xterm-256color
+    set term=xterm-256color
     set background=dark
     colorscheme solarized
   endif
@@ -92,7 +119,7 @@ let g:syntastic_enable_signs=1
 
 "Snipmate setup
 try
-  source ~/.vim/snippets/support_functions.vim
+  source ~/.vim/bundle/snipmate-snippets/support_functions.vim
 catch
   source ~/vimfiles/snippets/support_functions.vim
 endtry
@@ -103,22 +130,22 @@ function! s:SetupSnippets()
   "if we're in a rails env then read in the rails snippets
   if filereadable("./config/environment.rb")
     try
-      call ExtractSnips("~/.vim/snippets/ruby-rails", "ruby")
-      call ExtractSnips("~/.vim/snippets/eruby-rails", "eruby")
+      call ExtractSnips("~/.vim/bundle/snipmate-snippets/ruby-rails", "ruby")
+      call ExtractSnips("~/.vim/bundle/snipmate-snippets/eruby-rails", "eruby")
     catch
-      call ExtractSnips("~/vimfiles/snippets/ruby-rails", "ruby")
-      call ExtractSnips("~/vimfiles/snippets/eruby-rails", "eruby")
+      call ExtractSnips("~/vimfiles/bundle/snipmate-snippets/ruby-rails", "ruby")
+      call ExtractSnips("~/vimfiles/bundle/snipmate-snippets/eruby-rails", "eruby")
     endtry
   endif
 
   try
-    call ExtractSnips("~/.vim/snippets/html", "eruby")
-    call ExtractSnips("~/.vim/snippets/html", "xhtml")
-    call ExtractSnips("~/.vim/snippets/html", "php")
+    call ExtractSnips("~/.vim/bundle/snipmate-snippets/html", "eruby")
+    call ExtractSnips("~/.vim/bundle/snipmate-snippets/html", "xhtml")
+    call ExtractSnips("~/.vim/bundle/snipmate-snippets/html", "php")
   catch
-    call ExtractSnips("~/vimfiles/snippets/html", "eruby")
-    call ExtractSnips("~/vimfiles/snippets/html", "xhtml")
-    call ExtractSnips("~/vimfiles/snippets/html", "php")
+    call ExtractSnips("~/vimfiles/bundle/snipmate-snippets/html", "eruby")
+    call ExtractSnips("~/vimfiles/bundle/snipmate-snippets/html", "xhtml")
+    call ExtractSnips("~/vimfiles/bundle/snipmate-snippets/html", "php")
   endtry
 endfunction
 
