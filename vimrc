@@ -1,5 +1,6 @@
 "Initialize
 set nocompatible
+filetype on
 filetype off
 
 "Vundle init
@@ -9,12 +10,12 @@ Bundle 'gmarik/vundle'
 
 "Plugins
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'infoslack/snipmate-snippets'
 Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'jlanzarotta/bufexplorer'
-Bundle 'ervandew/snipmate.vim'
-Bundle 'ervandew/supertab'
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 Bundle 'bling/vim-airline'
+Bundle 'stephpy/vim-yaml'
 Bundle 'rking/ag.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
@@ -64,6 +65,7 @@ autocmd FileType css      set et sw=2 ts=2 sts=2
 autocmd FileType python   set et sw=4 ts=4 sts=4
 autocmd FileType Makefile set et sw=4 ts=4 sts=4
 autocmd FileType go       set et sw=4 ts=4 sts=4
+autocmd FileType sh       set et sw=4 ts=4 sts=4
 autocmd FileType c        set et sw=4 ts=4 sts=4
 autocmd FileType markdown set et sw=4 ts=4 sts=4
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -117,37 +119,13 @@ let g:ragtag_global_maps = 1
 "mark syntax errors with :signs
 let g:syntastic_enable_signs=1
 
-"Snipmate setup
-try
-  source ~/.vim/bundle/snipmate-snippets/support_functions.vim
-catch
-  source ~/vimfiles/snippets/support_functions.vim
-endtry
+"UltiSnips config
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-autocmd vimenter * call s:SetupSnippets()
-function! s:SetupSnippets()
-
-  "if we're in a rails env then read in the rails snippets
-  if filereadable("./config/environment.rb")
-    try
-      call ExtractSnips("~/.vim/bundle/snipmate-snippets/ruby-rails", "ruby")
-      call ExtractSnips("~/.vim/bundle/snipmate-snippets/eruby-rails", "eruby")
-    catch
-      call ExtractSnips("~/vimfiles/bundle/snipmate-snippets/ruby-rails", "ruby")
-      call ExtractSnips("~/vimfiles/bundle/snipmate-snippets/eruby-rails", "eruby")
-    endtry
-  endif
-
-  try
-    call ExtractSnips("~/.vim/bundle/snipmate-snippets/html", "eruby")
-    call ExtractSnips("~/.vim/bundle/snipmate-snippets/html", "xhtml")
-    call ExtractSnips("~/.vim/bundle/snipmate-snippets/html", "php")
-  catch
-    call ExtractSnips("~/vimfiles/bundle/snipmate-snippets/html", "eruby")
-    call ExtractSnips("~/vimfiles/bundle/snipmate-snippets/html", "xhtml")
-    call ExtractSnips("~/vimfiles/bundle/snipmate-snippets/html", "php")
-  endtry
-endfunction
+" If you want :UltiSnipsEdit to split your window.
+"let g:UltiSnipsEditSplit="vertical"
 
 "create tabs
 nmap <leader>t :tabnew<CR>
