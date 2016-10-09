@@ -12,25 +12,24 @@ Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'jlanzarotta/bufexplorer'
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
-Bundle 'bling/vim-airline'
+Bundle 'Shougo/neosnippet'
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 Bundle 'stephpy/vim-yaml'
 Bundle 'rking/ag.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-ragtag'
-Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-endwise'
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/emmet-vim'
-Bundle 'vinibaggio/vim-tubaina'
-Bundle 'ekalinin/Dockerfile.vim'
+Bundle 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 Bundle 'Glench/Vim-Jinja2-Syntax'
 Bundle 'fatih/vim-go'
+Bundle 'vim-scripts/groovy.vim'
 
 "General
 set encoding=utf-8
@@ -119,13 +118,26 @@ let g:ragtag_global_maps = 1
 "mark syntax errors with :signs
 let g:syntastic_enable_signs=1
 
-"UltiSnips config
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+"use neocomplete.
+let g:neocomplete#enable_at_startup = 1
 
-" If you want :UltiSnipsEdit to split your window.
-"let g:UltiSnipsEditSplit="vertical"
+"snippets config
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ neosnippet#expandable_or_jumpable() ?
+      \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
 
 "create tabs
 nmap <leader>t :tabnew<CR>
