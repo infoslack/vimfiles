@@ -27,7 +27,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/emmet-vim'
-Bundle 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+Bundle 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
 Bundle 'Glench/Vim-Jinja2-Syntax'
 Bundle 'fatih/vim-go'
 Bundle 'vim-scripts/groovy.vim'
