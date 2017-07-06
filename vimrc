@@ -1,36 +1,37 @@
 "Initialize
 set nocompatible
-filetype on
 filetype off
 
 "Vundle init
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
 
 "Plugins
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'ntpeters/vim-better-whitespace'
-Bundle 'jlanzarotta/bufexplorer'
-Bundle 'Shougo/neosnippet'
-Bundle 'Shougo/neosnippet-snippets'
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
-Bundle 'stephpy/vim-yaml'
-Bundle 'rking/ag.vim'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-ragtag'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-endwise'
-Bundle 'scrooloose/syntastic'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/emmet-vim'
-Bundle 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
-Bundle 'Glench/Vim-Jinja2-Syntax'
-Bundle 'fatih/vim-go'
-Bundle 'vim-scripts/groovy.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'stephpy/vim-yaml'
+Plugin 'rking/ag.vim'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-ragtag'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-endwise'
+Plugin 'scrooloose/syntastic'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'infoslack/vim-docker'
+Plugin 'Glench/Vim-Jinja2-Syntax'
+Plugin 'fatih/vim-go'
+Plugin 'vim-scripts/groovy.vim'
+call vundle#end()
+filetype plugin indent on
 
 "General
 set encoding=utf-8
@@ -44,6 +45,7 @@ set autoread                    "reload files changed outside vim
 set copyindent
 set laststatus=2
 set statusline=%f
+set noundofile
 
 "Indentation
 set autoindent
