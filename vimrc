@@ -9,8 +9,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 "Plugins
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'jlanzarotta/bufexplorer'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'vim-airline/vim-airline'
@@ -22,14 +20,12 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-endwise'
-Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'infoslack/vim-docker'
+Plugin 'fatih/vim-go'
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/emmet-vim'
-Plugin 'infoslack/vim-docker'
-Plugin 'Glench/Vim-Jinja2-Syntax'
-Plugin 'fatih/vim-go'
-Plugin 'vim-scripts/groovy.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -59,7 +55,7 @@ set expandtab
 set hidden
 
 "Syntax
-syntax on
+syntax enable
 autocmd FileType ruby     set et sw=2 ts=2 sts=2
 autocmd FileType Gemfile  set ft=ruby
 autocmd FileType yaml     set et sw=2 ts=2 sts=2
@@ -70,6 +66,7 @@ autocmd FileType go       set et sw=4 ts=4 sts=4
 autocmd FileType sh       set et sw=4 ts=4 sts=4
 autocmd FileType c        set et sw=4 ts=4 sts=4
 autocmd FileType markdown set et sw=4 ts=4 sts=4
+autocmd FileType asm      set et sw=8 ts=8 sts=8
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 "Turn Off Swap Files
