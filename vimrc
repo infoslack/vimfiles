@@ -16,18 +16,17 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'stephpy/vim-yaml'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-endwise'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'vim-ruby/vim-ruby'
 Plugin 'infoslack/vim-docker'
 Plugin 'fatih/vim-go'
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/emmet-vim'
 call vundle#end()
 filetype plugin indent on
+set ttyfast
 
 "General
 set encoding=utf-8
@@ -42,6 +41,7 @@ set copyindent
 set laststatus=2
 set statusline=%f
 set noundofile
+set lazyredraw
 
 "Indentation
 set autoindent
@@ -56,18 +56,19 @@ set hidden
 
 "Syntax
 syntax enable
-autocmd FileType ruby     set et sw=2 ts=2 sts=2
-autocmd FileType Gemfile  set ft=ruby
-autocmd FileType yaml     set et sw=2 ts=2 sts=2
-autocmd FileType css      set et sw=2 ts=2 sts=2
-autocmd FileType python   set et sw=4 ts=4 sts=4
-autocmd FileType Makefile set et sw=4 ts=4 sts=4
-autocmd FileType go       set et sw=4 ts=4 sts=4
-autocmd FileType sh       set et sw=4 ts=4 sts=4
-autocmd FileType c        set et sw=4 ts=4 sts=4
-autocmd FileType markdown set et sw=4 ts=4 sts=4
-autocmd FileType asm      set et sw=8 ts=8 sts=8
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+au BufNewFile,BufRead *.vim      setlocal noet sw=4 ts=4 sts=4
+au BufNewFile,BufRead *.yml,*.yaml  setlocal et sw=2 ts=2
+au BufNewFile,BufRead *.css      setlocal et sw=2 ts=2
+au BufNewFile,BufRead *.py       setlocal et sw=4 ts=4
+au BufNewFile,BufRead *.go       setlocal noet sw=4 ts=4 sts=4
+au BufNewFile,BufRead *.sh       setlocal et sw=2 ts=2
+au BufNewFile,BufRead *.c        setlocal et sw=4 ts=4
+au BufNewFile,BufRead *.md       setlocal et sw=4 ts=4 sts=4
+au BufNewFile,BufRead Makefile   setlocal noet sw=4 ts=4 sts=4
+
+au FileType json setlocal et sw=2 ts=2
+au FileType ruby setlocal et sw=2 ts=2
+au FileType Gemfile set filetype=ruby
 
 "Turn Off Swap Files
 set noswapfile
