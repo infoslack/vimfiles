@@ -8,10 +8,14 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 "Plugins
+Plugin 'nvie/vim-flake8'
+Plugin 'vim-scripts/indentpython.vim'
+
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 Plugin 'stephpy/vim-yaml'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-markdown'
@@ -30,6 +34,7 @@ Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'Raimondi/delimitMate'
 call vundle#end()
 filetype plugin indent on
 set ttyfast
@@ -51,6 +56,7 @@ set splitright
 set splitbelow
 set autowrite
 set hidden
+set wildmenu
 set fileformats=unix,dos,mac
 set noshowmatch
 set noshowmode
@@ -84,10 +90,12 @@ augroup filetypedetect
 
   autocmd BufNewFile,BufRead *.txt setlocal noet ts=4 sw=4
   autocmd BufNewFile,BufRead *.md setlocal noet ts=4 sw=4
+  autocmd BufNewFile,BufRead *.md setlocal noet ts=4 sw=4
   autocmd BufNewFile,BufRead *.html setlocal noet ts=4 sw=4
   autocmd BufNewFile,BufRead *.vim setlocal expandtab shiftwidth=2 tabstop=2
   autocmd BufNewFile,BufRead *.sh setlocal expandtab shiftwidth=2 tabstop=2
   autocmd BufNewFile,BufRead *.proto setlocal expandtab shiftwidth=2 tabstop=2
+  autocmd BufNewFile,BufRead *.py setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 textwidth=79
 
   autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4
   autocmd FileType yaml setlocal expandtab shiftwidth=2 tabstop=2
@@ -125,6 +133,7 @@ command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>),
 
 "AG
 let g:ackprg = 'ag --vimgrep --smart-case'
+nnoremap \ :Ack<SPACE>
 
 "Up and down by default (and use gj gk to go quicker)
 noremap gk <PageUp>
@@ -141,6 +150,13 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 noremap <Leader>n :NERDTreeToggle<cr>
 noremap <Leader>f :NERDTreeFind<cr>
 let NERDTreeShowHidden=1
+
+"DelimitMate
+let g:delimitMate_expand_cr = 1
+let g:delimitMate_expand_space = 1
+let g:delimitMate_smart_quotes = 1
+let g:delimitMate_expand_inside_quotes = 0
+let g:delimitMate_smart_matchpairs = '^\%(\w\|\$\)'
 
 "Whitespace
 let g:better_whitespace_enabled=1
